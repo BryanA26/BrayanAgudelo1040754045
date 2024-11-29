@@ -1,0 +1,22 @@
+name: PHP Lint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  php-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run PHP lint
+      run: |
+        find . -name "*.php" -exec php -l {} \; # Verifica errores de sintaxis
