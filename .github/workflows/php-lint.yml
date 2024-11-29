@@ -23,4 +23,15 @@ jobs:
     - name: Run PHP lint
       run: |
         set -e
-        find . -name "*.php" -exec php -l {} \; # Verifica errores de sintaxis
+        files=$(find . -name "*.php")
+        if [ -z "$files" ]; then
+          echo "No PHP files found."
+          exit 1
+        fi
+        for file in $files; do
+          php -l $file
+          if [ $? -ne 0 ]; then
+            echo "Syntax error in $file"
+            exit 1
+          fi
+        done
