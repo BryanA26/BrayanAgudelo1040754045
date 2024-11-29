@@ -1,4 +1,4 @@
 <?php
 
 
-echo "Quiero un error de sintaxis para test" 
+echo "Buscando errores de sintaxis" 
