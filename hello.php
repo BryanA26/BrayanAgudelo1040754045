@@ -1,4 +1,4 @@
 <?php
 
 
-echo "Buscando errores de sintaxis" 
+echo "falta un punto y coma" 
