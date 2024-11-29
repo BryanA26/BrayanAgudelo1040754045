@@ -19,4 +19,5 @@ jobs:
 
     - name: Run PHP lint
       run: |
+        set -e
         find . -name "*.php" -exec php -l {} \; # Verifica errores de sintaxis
